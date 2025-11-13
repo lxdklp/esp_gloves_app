@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:esp_gloves/setting/theme.dart';
-import 'package:esp_gloves/setting/connect.dart';
-import 'package:esp_gloves/setting/log_viewer.dart';
-import 'package:esp_gloves/setting/about.dart';
+import 'package:esp_gloves/pages/setting/theme.dart';
+import 'package:esp_gloves/pages/setting/log_viewer.dart';
+import 'package:esp_gloves/pages/setting/about.dart';
 
 class SettingPage extends StatefulWidget {
   const SettingPage({super.key});
@@ -29,18 +28,6 @@ class SettingPageState extends State<SettingPage> {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => const ThemePage()),
-              );
-            },
-          ),
-          ),Card(
-            child: ListTile(
-              leading: const Icon(Icons.wifi),
-              title: const Text('\n连接设置\n'),
-              trailing: const Icon(Icons.chevron_right),
-              onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const ConnectPage()),
               );
             },
           ),

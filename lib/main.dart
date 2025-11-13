@@ -1,11 +1,10 @@
+import 'package:esp_gloves/pages/ble.dart';
 import 'package:flutter/material.dart';
 import 'package:dynamic_color/dynamic_color.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 import 'package:esp_gloves/function/log.dart';
-import 'package:esp_gloves/info.dart';
-import 'package:esp_gloves/action.dart';
-import 'package:esp_gloves/setting.dart';
+import 'package:esp_gloves/pages/setting.dart';
 
 // 日志
 _initLogs() async {
@@ -195,21 +194,15 @@ class _MyHomePageState extends State<MyHomePage> {
   int _selectedIndex = 0;
 
   static const List<Widget> _pages = [
-    InfoPage(),
-    ActionPage(),
+    BLEPage(),
     SettingPage(),
   ];
 
   static const List<NavigationItem> _navigationItems = [
     NavigationItem(
-      label: '信息',
-      icon: Icons.info_outlined,
-      selectedIcon: Icons.info,
-    ),
-    NavigationItem(
-      label: '手势',
-      icon: Icons.pan_tool_outlined,
-      selectedIcon: Icons.pan_tool,
+      label: '蓝牙',
+      icon: Icons.bluetooth,
+      selectedIcon: Icons.bluetooth_connected,
     ),
     NavigationItem(
       label: '设置',
