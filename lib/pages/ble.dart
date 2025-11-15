@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_blue_plus/flutter_blue_plus.dart';
 import 'dart:async';
+import 'package:esp_gloves/pages/ble/device.dart';
 
 class BLEPage extends StatefulWidget {
   const BLEPage({super.key});
@@ -105,6 +106,12 @@ class BLEPageState extends State<BLEPage> {
       // 连接到设备
       await device.connect();
       if (mounted) {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => DevicesPage(device: device),
+          ),
+        );
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(content: Text('已连接到 ${device.platformName}')),
         );
